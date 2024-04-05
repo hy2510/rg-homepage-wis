@@ -128,7 +128,7 @@
     border-bottom: 2px solid var(--gray2);
     background-color: var(--white);
     position: sticky;
-    top: calc(60px + 52px);
+    top: calc(60px + 52px + env(safe-area-inset-top));
     z-index: 3;
     @media (prefers-color-scheme: dark) {
       background-color: rgba($color: #ffffff, $alpha: 0.15);

@@ -123,7 +123,7 @@ export function StreakModal({
                 <>
                   {/* 연속학습 달성 기록이 없을 때 */}
                   <EmptyMessage isAward>
-                    아직 연속학습 달성 기록이 없어요. <br />
+                    아직 받은 어워드가 없어요.<br />
                     매일 1권 이상의 학습을 20일간 연속으로 완료해 보세요!
                   </EmptyMessage>
                 </>

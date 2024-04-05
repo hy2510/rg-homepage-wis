@@ -1,16 +1,16 @@
 .detailed_reports_list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-m);
+  gap: var(--space-xxl);
 }
 
 .detailed_report_item {
-  position: relative;
-  z-index: 1;
+  // position: relative;
+  // z-index: 1;
   display: grid;
   grid-template-columns: 1fr 2.5fr;
   gap: var(--space-m);
-  padding: var(--space-s);
+  // padding: var(--space-s);
   .book_cover {
     display: flex;
     align-items: start;
@@ -18,20 +18,22 @@
     min-width: 90px;
     img {
       display: block;
-      border-radius: 0 0 var(--round-m) var(--round-m);
+      border-radius: var(--round-m);
+      border: 1px solid rgba($color: #000000, $alpha: 0.05);
     }
   }
   .report {
     min-height: 150px;
+    position: relative;
     @mixin afterStyle {
       content: "";
       position: absolute;
       z-index: -1;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 0 0 var(--round-l) var(--round-l);
+      left: -100%;
+      top: -20px;
+      right: -100%;
+      bottom: -10px;
+      // border-radius: 0 0 var(--round-l) var(--round-l);
     }
     &.pass {
       &::after {

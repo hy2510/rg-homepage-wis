@@ -83,7 +83,8 @@ export default function LevelSelector({
       <Modal
         compact
         header
-        title={`레벨별 탐색 / ${bookType === 'EB' ? 'eBook' : 'pBookQuiz'}`}
+        // title={`레벨별 탐색 - ${bookType === 'EB' ? 'eBook' : 'pBookQuiz'}`}
+        title={`레벨별 탐색`}
         onClickDelete={() => {
           _viewLevelSelector && _viewLevelSelector(false)
         }}
@@ -91,30 +92,32 @@ export default function LevelSelector({
           _viewLevelSelector && _viewLevelSelector(false)
         }}>
         <div className={style.current_study_level_container}>
-          <AlertBar>레벨별로 모든 학습을 탐색해 볼 수 있어요.</AlertBar>
           {isSelectableBookType && (
-            <TabNavBar
-              items={['eBook', 'pBookQuiz'].map((name) => {
-                let active = false
-                if (bookType === 'EB') {
-                  active = name === 'eBook'
-                } else {
-                  active = name === 'pBookQuiz'
-                }
-                return {
-                  label: name,
-                  active: active,
-                }
-              })}
-              onItemClick={(_, label) => {
-                if (label === 'eBook') {
-                  setBookType('EB')
-                } else {
-                  setBookType('PB')
-                }
-              }}
-            />
+            <div style={{position: "sticky", top: 0, zIndex: 10}}>
+              <TabNavBar
+                items={['eBook', 'pBookQuiz'].map((name) => {
+                  let active = false
+                  if (bookType === 'EB') {
+                    active = name === 'eBook'
+                  } else {
+                    active = name === 'pBookQuiz'
+                  }
+                  return {
+                    label: name,
+                    active: active,
+                  }
+                })}
+                onItemClick={(_, label) => {
+                  if (label === 'eBook') {
+                    setBookType('EB')
+                  } else {
+                    setBookType('PB')
+                  }
+                }}
+              />
+            </div>
           )}
+          <AlertBar>레벨별로 학습 진행율을 확인하고 학습 도서를 탐색해 볼 수 있어요.</AlertBar>
           <div className={style.level_items}>
             {levelGroup1 && levelGroup1.list && levelGroup1.list.length > 0 && (
               <>

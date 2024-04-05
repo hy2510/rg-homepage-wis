@@ -85,6 +85,7 @@ function PagenationNavButton({
         src={`/src/images/arrow-icons/${imgName}`}
         width={20}
         height={20}
+        style={{display: 'block'}}
       />
     </PaginationItem>
   )

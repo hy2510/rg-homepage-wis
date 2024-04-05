@@ -58,7 +58,7 @@ function TryAgain() {
       <main className={style.try_again}>
         <AlertBar>
           이곳에서 학습을 완료했지만, 점수가 낮아 ‘통과하지 못한 도서’들을 볼 수
-          있어요. (통과 점수: 70점)
+          있어요. (통과 점수 70점)
         </AlertBar>
         <div className={style.try_again_list}>
           {books.book.map((book, i) => {

@@ -16,7 +16,7 @@
   }
   .catchphrase {
     margin: auto;
-    margin-top: var(--space-s);
+    margin-top: calc(env(safe-area-inset-top) + var(--space-s));
     text-align: center;
     .brand_name {
       color: var(--white);

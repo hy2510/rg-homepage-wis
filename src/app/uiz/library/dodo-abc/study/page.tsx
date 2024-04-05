@@ -18,6 +18,7 @@ import LibrarySearchFilter, {
 import StudentHistorySelectModal from '../../_cpnt/StudentHistorySelectModal'
 import useQuickStudyStart from '../../_fn/use-quick-study-start'
 import DodoABCNavBar from '../_component/DodoABCNavBar'
+import Image from 'next/image'
 
 const STYLE_ID = 'page_dodo_abc_study'
 export default function Page() {
@@ -153,6 +154,32 @@ const DodoAbcBookCover = ({
   const style = useStyle(STYLE_ID)
   return (
     <div className={style.dodo_abc_book_cover}>
+      <div className={style.study_status}>
+        <div className={style.assigned_todo}>
+          <Image
+            alt=""
+            src="/src/images/@book-cover/assigned_todo.svg"
+            width={34}
+            height={34}
+          />
+        </div>
+        <div className={style.passed_1}>
+          <Image
+            alt=""
+            src="/src/images/@book-cover/passed_1.svg"
+            width={34}
+            height={34}
+          />
+        </div>
+        <div className={style.passed_all}>
+          <Image
+            alt=""
+            src="/src/images/@book-cover/passed_all.svg"
+            width={34}
+            height={34}
+          />
+        </div>
+      </div>
       <div
         className={style.group1}
         onClick={() => {

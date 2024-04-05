@@ -1,7 +1,7 @@
 .forgot {
   width: calc(100% - 40px);
   margin: auto;
-  margin-top: var(--space-m);
+  margin-top: calc(env(safe-area-inset-top) + var(--space-m));
 }
 
 .forgot_password {

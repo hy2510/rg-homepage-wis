@@ -47,7 +47,8 @@ export function StudyHomeBookList({
           '마음에 드는 책을 골라 읽고 학습해 보세요! (pBook은 퀴즈만 제공)'
         }
         filterOption={filterOption}
-        onChangeFilterOption={onChangeFilterOption}>
+        onChangeFilterOption={onChangeFilterOption}
+        bookCount={books.book.length}>
         {books.book.map((book, i) => {
           const earnPoint = isLabelRgPoint ? book.bookPoint : undefined
           const bookCode = isLabelRgPoint ? undefined : book.levelName

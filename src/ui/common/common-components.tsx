@@ -25,6 +25,7 @@ export function Button({
   width,
   onClick,
   children,
+  completed,
 }: {
   color?: 'red' | 'blue' | 'gray' | 'dark' | 'blue'
   shadow?: boolean
@@ -32,6 +33,7 @@ export function Button({
   width?: string
   onClick?: (e?: MouseEvent) => void
   children?: ReactNode
+  completed?: boolean
 }) {
   const style = useStyle(STYLE_ID)
 
@@ -58,7 +60,7 @@ export function Button({
     <div
       className={`${style.bs_button} ${buttonColor} ${shadow && style.shadow} ${
         roundFull && style.round_full
-      }`}
+      } ${completed && style.completed}`}
       onClick={onClick}
       style={{ width: width }}>
       {children}
@@ -630,6 +632,7 @@ export function Modal({
   onClickBack,
   onClickLightbox,
   children,
+  bookInfoStyle,
 }: {
   compact?: boolean
   header?: boolean
@@ -640,6 +643,7 @@ export function Modal({
   onClickBack?: () => void
   onClickLightbox?: () => void
   children: ReactNode
+  bookInfoStyle?: boolean
 }) {
   const style = useStyle(STYLE_ID)
 
@@ -651,7 +655,7 @@ export function Modal({
           //   compact && style.compact
           className={`${style.modal_container} ${
             compact && style.compact
-          }`}>
+          } ${bookInfoStyle && style.book_info}`}>
           {header && (
             <div className={style.modal_header}>
               <div className={style.modal_header_container}>

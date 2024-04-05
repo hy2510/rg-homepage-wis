@@ -84,7 +84,7 @@ export default function Page() {
   const style = useStyle(STYLE_ID)
 
   return (
-    <div className={`${style.interview} container compact`}>
+    <div className={`${style.interview}`}>
       <div className={style.group_interview_main_media}>
         <InterviewCard1
           movieSrc={

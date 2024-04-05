@@ -15,6 +15,14 @@
   -webkit-tap-highlight-color: transparent;
   &:active {
     transform: scale(0.98);
+    &.completed {
+      transform: none;
+    }
+  }
+  &.completed {
+    cursor: default;
+    filter: grayscale(1);
+    opacity: 0.2;
   }
   @mixin shadowStyle {
     // border: 1px solid rgba(0, 0, 0, 0.05);
@@ -322,6 +330,9 @@
     font-weight: 500;
     font-size: var(--text-m);
     color: var(--gray1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &.on {
     button {
@@ -638,6 +649,12 @@
     &.compact {
       width: 500px;
       max-height: 90vh;
+    }
+    &.book_info {
+      position: absolute;
+      top: 45vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     .modal_header {
       padding: var(--space-m);

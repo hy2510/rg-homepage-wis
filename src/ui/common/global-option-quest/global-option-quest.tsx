@@ -88,7 +88,7 @@ const DodoAndFriends = () => {
     <div className={style.dodo_and_friends}>
       <div className={style.comment}>
         <AlertBar>
-          포인트를 모으고 친구들의 성장 스토리를 확인해 보세요!
+          학습 포인트를 모아서 친구들의 성장 스토리를 잠금 해제하세요!
         </AlertBar>
       </div>
       <div className={style.intro_button}>
@@ -269,7 +269,7 @@ const LevelMasterProgress = () => {
     <div className={style.level_master_progress}>
       <div className={style.comment}>
         <AlertBar>
-          레벨별로 포인트롤 획득하여 레벨 마스터를 달성해 보세요.
+          레벨별 학습 포인트를 모아서 레벨 마스터를 달성해 보세요!
         </AlertBar>
       </div>
       <div className={style.level_master_lists}>

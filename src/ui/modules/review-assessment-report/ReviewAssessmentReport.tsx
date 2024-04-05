@@ -142,7 +142,8 @@ export const ReviewAssessmentReport = ({
         } else if (onClickDelete) {
           onClickDelete()
         }
-      }}>
+      }}
+      bookInfoStyle>
       <div className={style.review_assessment_report}>
         <div
           className={style.col_a}
@@ -246,10 +247,15 @@ export const ReviewAssessmentReport = ({
                   : bookInfo.scoreStep5
               }
             />
-            {(bookInfo.speakPassYn || bookInfo.animationPath) && (
+            {/* {(bookInfo.speakPassYn || bookInfo.animationPath) && (
               <MoreActivities
                 isSpeakPass={bookInfo.speakPassYn}
                 animationPath={bookInfo.animationPath}
+              />
+            )} */}
+            {(bookInfo.speakPassYn) && (
+              <MoreActivities
+                isSpeakPass={bookInfo.speakPassYn}
               />
             )}
           </div>
@@ -545,7 +551,7 @@ const MoreActivities = ({
           {isSpeakPass && (
             <div className={style.speak_button}>Speak (학습 완료)</div>
           )}
-          {animationPath && <div className={style.movie_button}>영상시청</div>}
+          {/* {animationPath && <div className={style.movie_button}>영상시청</div>} */}
         </div>
       </div>
     </div>

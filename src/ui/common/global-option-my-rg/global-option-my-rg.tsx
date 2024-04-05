@@ -999,7 +999,7 @@ export function LevelMasterAward() {
   return (
     <div className={style.level_master_award}>
       <AlertBar>
-        각 레벨별 레벨업 기준을 달성하여 레벨마스터를 획득하세요.
+        레벨별 학습 포인트를 모아서 레벨 마스터 어워드를 획득하세요.
       </AlertBar>
       {emptyMessage ? (
         <EmptyMessage isAward>아직 받은 어워드가 없어요.</EmptyMessage>

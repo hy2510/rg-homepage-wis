@@ -15,6 +15,14 @@
   -webkit-tap-highlight-color: transparent;
   &:active {
     transform: scale(0.98);
+    &.completed {
+      transform: none;
+    }
+  }
+  &.completed {
+    cursor: default;
+    filter: grayscale(1);
+    opacity: 0.2;
   }
   @mixin shadowStyle {
     // border: 1px solid rgba(0, 0, 0, 0.05);
@@ -190,7 +198,7 @@
 .nav_container {
   display: flex;
   position: sticky;
-  top: 60px;
+  top: calc(env(safe-area-inset-top) + 60px);
   z-index: 5;
   background-color: var(--white);
   box-shadow:
@@ -330,6 +338,9 @@
     font-weight: 500;
     font-size: var(--text-m);
     color: var(--gray1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &.on {
     button {
@@ -432,7 +443,7 @@
   align-items: center;
   gap: var(--space-xxs);
   position: relative;
-  // z-index: 4;
+  z-index: 4;
   .title {
     font-size: var(--text-d-1);
     font-weight: 600;
@@ -632,14 +643,14 @@
   bottom: 0;
   .modal_container {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overscroll-behavior-y: none;
     background-color: var(--white);
     overflow-x: hidden;
     overflow-y: auto;
-    margin: auto;
     position: relative;
-    padding-bottom: env(safe-area-inset-bottom);
+    margin-top: calc(env(safe-area-inset-top) + 52.5px);
+    padding-bottom: calc(env(safe-area-inset-top) + env(safe-area-inset-bottom) + 52.5px);
     &::-webkit-scrollbar {
       display: none;
     }
@@ -650,15 +661,22 @@
     }
     &.compact {
       width: 100vw;
-      height: 100vh;
+      height: 100dvh;
+    }
+    &.book_info {
+      margin-top: calc(env(safe-area-inset-top));
     }
     .modal_header {
-      padding: var(--space-s) var(--space-s) var(--space-xxs) var(--space-s);
+      padding: var(--space-s);
+      padding-top: calc(env(safe-area-inset-top) + var(--space-s));
+      padding-bottom: var(--space-xxs);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       background-color: var(--white);
       @media (prefers-color-scheme: dark) {
@@ -707,8 +725,10 @@
       display: flex;
       padding: var(--space-s);
       padding-left: var(--space-xs);
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 10;
       background-color: var(--white);
       @media (prefers-color-scheme: dark) {
@@ -739,9 +759,9 @@
         }
       }
     }
-    .modal_body {
-      padding-bottom: env(safe-area-inset-bottom);
-    }
+    // .modal_body {
+    //   padding-bottom: env(safe-area-inset-bottom);
+    // }
   }
 }
 .light_box {

@@ -299,7 +299,8 @@ export function BookInfoModal({
           onClickDelete()
         }
         bookInfoAction.resetBookDetail()
-      }}>
+      }}
+      bookInfoStyle>
       <div className={style.book_info_modal}>
         <div
           className={style.col_a}
@@ -411,13 +412,33 @@ export function BookInfoModal({
                   })}
                 </SelectBox>
               )}
-            <Button
+            {/* Full, Easy 모드가 아닐 때 */}
+            {/* <Button
               width="100%"
               shadow
               color={'red'}
               onClick={() => onClickStart('study')}>
               학습하기
-            </Button>
+            </Button> */}
+            {/* Full, Easy 모드 일 때 */}
+            <div className={style.full_easy_container}>
+              <Button
+                width="100%"
+                shadow
+                color={'red'}
+                onClick={() => onClickStart('study')}
+                completed={true}>
+                EASY Mode
+              </Button>
+              <Button
+                width="100%"
+                shadow
+                color={'red'}
+                onClick={() => onClickStart('study')}
+                completed={false}>
+                FULL Mode
+              </Button>
+            </div>
           </div>
           <div className={style.light_box}></div>
         </div>

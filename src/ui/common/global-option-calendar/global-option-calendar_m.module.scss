@@ -1,11 +1,12 @@
 // 캘린더 모달
 .calendar_modal {
   background-color: var(--gray3);
+  padding-bottom: env(safe-area-inset-bottom);
   @media (prefers-color-scheme: dark) {
     background-color: #0c0541;
   }
   .cal_header {
-    min-height: 160px;
+    min-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,6 +55,8 @@
         }
       }
       .monthly_study_status {
+        min-width: 300px;
+        min-height: 34px;
         border-radius: var(--round-full);
         background: rgba(255, 255, 255, 0.9);
         -webkit-backdrop-filter: blur(2px);

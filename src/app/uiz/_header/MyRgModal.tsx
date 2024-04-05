@@ -743,7 +743,7 @@ const TotalStudyScore = ({
   return (
     <div className={style.total_study_score}>
       <div className={style.student_info}>
-        <div className={style.user_grade}>{userGrade}</div>
+        {/* <div className={style.user_grade}>{userGrade}</div> */}
         <div className={style.student_name}>
           <div className={style.txt_l}>{studentName}</div>
         </div>
@@ -794,17 +794,34 @@ const AwardListItem = ({
 }) => {
   const style = useStyle(STYLE_ID)
 
+  const [isDarkMode, _isDarkMode] = useState(true);
+
+  useEffect(() => {
+    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    _isDarkMode(darkModeQuery.matches);
+
+    const handleDarkModeChange = (e: any) => {
+      _isDarkMode(e.matches);
+    };
+
+    darkModeQuery.addEventListener("change", handleDarkModeChange);
+
+    return () => {
+      darkModeQuery.removeEventListener("change", handleDarkModeChange);
+    };
+  }, []);
+
   return (
     <div className={style.award_list_item} onClick={onClick}>
       <div className={style.col_a}>
         <span className={style.txt_l}>{tag}</span>
         <span className={style.txt_p}>
-          {text} {collectNum}개
+          {text} {collectNum}
         </span>
       </div>
       <Image
         alt=""
-        src="/src/images/arrow-icons/chv_right.svg"
+        src={isDarkMode ? "/src/images/arrow-icons/chv_right_white.svg" : "/src/images/arrow-icons/chv_right.svg"}
         width={24}
         height={24}
       />
@@ -1090,7 +1107,7 @@ export function StreakAward() {
   return (
     <div className={style.streak_award}>
       <AlertBar>
-        연속 학습을 완료하여 20일 마다 새로운 어워드를 획득해 보세요.
+        연속학습을 진행하여 20일 마다 새로운 어워드를 획득해 보세요.
       </AlertBar>
       {!awardStudy || awardStudy.length <= 0 ? (
         <EmptyMessage isAward>아직 받은 어워드가 없어요.</EmptyMessage>
@@ -1192,7 +1209,7 @@ export function ChallengeAward() {
 
   return (
     <div className={style.challenge_award}>
-      <AlertBar>영어 독서왕 챌린지에 도전하여 상품을 획득해 보세요.</AlertBar>
+      <AlertBar>영어독서왕 챌린지에 도전하고 상품과 어워드를 획득해 보세요.</AlertBar>
       {!awardReadingKing || awardReadingKing.length <= 0 ? (
         <EmptyMessage isAward>아직 받은 어워드가 없어요.</EmptyMessage>
       ) : (
@@ -1250,7 +1267,7 @@ export function LevelMasterAward() {
   return (
     <div className={style.level_master_award}>
       <AlertBar>
-        각 레벨별 레벨업 기준을 달성하여 레벨마스터를 획득하세요.
+        레벨별 학습 포인트를 모아서 레벨 마스터 어워드를 획득하세요.
       </AlertBar>
       {!awardLevelMaster || awardLevelMaster.length === 0 ? (
         <EmptyMessage isAward>아직 받은 어워드가 없어요.</EmptyMessage>
@@ -1348,6 +1365,23 @@ export function DailyGoalSetting() {
     }
   }
 
+  const [isDarkMode, _isDarkMode] = useState(true);
+
+  useEffect(() => {
+    const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    _isDarkMode(darkModeQuery.matches);
+
+    const handleDarkModeChange = (e: any) => {
+      _isDarkMode(e.matches);
+    };
+
+    darkModeQuery.addEventListener("change", handleDarkModeChange);
+
+    return () => {
+      darkModeQuery.removeEventListener("change", handleDarkModeChange);
+    };
+  }, []);
+
   return (
     <div className={style.daily_goal_setting}>
       <div className={style.row_a}>
@@ -1397,7 +1431,7 @@ export function DailyGoalSetting() {
               }}>
               <Image
                 alt=""
-                src="/src/images/@daily-goal-setting/minus.svg"
+                src={isDarkMode ? "/src/images/@daily-goal-setting/minus_white.svg" : "/src/images/@daily-goal-setting/minus.svg"}
                 width={36}
                 height={36}
               />
@@ -1417,7 +1451,7 @@ export function DailyGoalSetting() {
               }}>
               <Image
                 alt=""
-                src="/src/images/@daily-goal-setting/plus.svg"
+                src={isDarkMode ? "/src/images/@daily-goal-setting/plus_white.svg" : "/src/images/@daily-goal-setting/plus.svg"}
                 width={36}
                 height={36}
               />
@@ -1430,7 +1464,7 @@ export function DailyGoalSetting() {
                 color={isChangeLoading ? 'gray' : 'blue'}
                 width="100%"
                 onClick={() => onUpdateSetting()}>
-                설정변경
+                변경
               </Button>
             ) : (
               <Button color={'gray'} width="100%">
@@ -1507,7 +1541,7 @@ export function MyStudyLevel() {
               _isStudyLevel(true)
               _isLevelTestHistory(false)
             }}>
-            현재 상태
+            현재 수준
           </NavItem>
           <NavItem
             active={isLevelTestHistory}
@@ -1723,13 +1757,12 @@ const LevelTestHistory = () => {
         <div>
           <div className={style.txt_h}>레벨 테스트 이력</div>
           <div className={style.txt_p}>
-            레벨 테스트를 응시한 결과를 확인할 수 있어요. 2회차 레벨 테스트
-            이후로는 180일이 지났을 때 재응시할 수 있어요.
+            레벨 테스트 응시 결과를 확인할 수 있어요. 레벨 테스트 2회차 이후는 180일이 지났을 때부터 재응시할 수 있어요.
           </div>
         </div>
         {/* 레벨 테스트 이력이 없을 때 */}
         {!isTestHistoryLoading && isEmpty && (
-          <EmptyMessage>레벨 테스트 이력이 없습니다.</EmptyMessage>
+          <EmptyMessage>레벨 테스트 이력이 없어요.</EmptyMessage>
         )}
         {!isTestHistoryLoading &&
           history.map((h, i) => {

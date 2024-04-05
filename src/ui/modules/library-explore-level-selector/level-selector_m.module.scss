@@ -14,12 +14,12 @@
       font-weight: 500;
       font-size: var(--text-m);
       padding: var(--space-xs) var(--space-xs) var(--space-s) var(--space-xs);
-      border-bottom: 2px solid var(--gray3);
+      border-bottom: 2px dotted var(--gray3);
       display: flex;
       align-items: center;
       justify-content: space-between;
       @media (prefers-color-scheme: dark) {
-        border-bottom: 2px solid rgba($color: #ffffff, $alpha: 0.15);
+        border-bottom: 2px dotted rgba($color: #ffffff, $alpha: 0.15);
       }
       span {
         font-weight: 400;

@@ -20,6 +20,8 @@ export function CourseDodoABCList({
   outroBg,
   outroBgUrl,
   courseBgUrl,
+  introPosterSrc,
+  outroPosterSrc,
 }: {
   passedNum: number
   totalNum: number
@@ -33,13 +35,15 @@ export function CourseDodoABCList({
   outroBg?: string
   outroBgUrl?: string
   courseBgUrl?: string
+  introPosterSrc?: string
+  outroPosterSrc?: string
 }) {
   const style = useStyle(STYLE_ID)
 
   const IntroVideoBox = () => {
     return (
       <div className={style.video_wraper}>
-        <video controls>
+        <video controls poster={introPosterSrc}>
           <source src={introVideoSrc} type="video/mp4" />
         </video>
       </div>
@@ -49,7 +53,7 @@ export function CourseDodoABCList({
   const OutroVidioBox = () => {
     return (
       <div className={style.video_wraper}>
-        <video controls>
+        <video controls poster={outroPosterSrc}>
           <source src={outroVideoSrc} type="video/mp4" />
         </video>
       </div>

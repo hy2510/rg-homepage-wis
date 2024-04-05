@@ -66,7 +66,7 @@
   font-family: "Noto Sans KR", sans-serif;
   &::-webkit-scrollbar {
     background-color: transparent;
-    width: 3px;
+    width: 6px;
     @media (pointer: coarse) {
       display: none;
     }
@@ -79,9 +79,9 @@
 
 html,
 body {
-  width: 100vw;
+  // width: 100vw;
   min-width: 1024px;
-  height: 100vh;
+  height: 100dvh;
   overscroll-behavior-y: none;
   -webkit-tap-highlight-color: transparent;
   // touch-action: none;
@@ -101,7 +101,7 @@ body {
   }
   @media (pointer: coarse) {
     min-width: 360px;
-    min-height: fit-content;
+    min-height: -webkit-fill-available;;
     height: fit-content;
   }
 }
@@ -114,8 +114,9 @@ a {
 
 main {
   padding: var(--space-m) 0;
-  min-height: calc(100vh - (var(--header-height) - 10px));
+  min-height: calc(100dvh - (var(--header-height) - 10px));
   height: 100%;
+  width: calc(100% - 6px);
   // min-height: calc(100vh - var(--space-xxl) - var(--header-height));
   // margin-bottom: var(--space-xxl) !important;
 }

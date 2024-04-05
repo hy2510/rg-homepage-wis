@@ -22,7 +22,7 @@ export const LevelUpStatusPK = ({
       <div className={style.level_up_status_container}>
         <div className={style.row_a}>{children}</div>
         <div className={style.row_b}>
-          <SetStudyMode onClickStudyMode={onClickStudyMode} />
+          {/* <SetStudyMode onClickStudyMode={onClickStudyMode} /> */}
         </div>
       </div>
       <ProgressBar width={progress} check="100%" toolTip="Level Up" />

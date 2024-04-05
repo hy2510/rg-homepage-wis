@@ -46,6 +46,10 @@
     border-radius: var(--round-l);
     overflow: hidden;
   }
+  video[poster] { 
+    height:100%;
+    width:100%;
+  }
 }
 .intro_movie {
   width: 100%;

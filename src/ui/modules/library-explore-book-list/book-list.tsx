@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { AlertBar } from '@/ui/common/common-components'
+import { AlertBar, EmptyMessage } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
 import LibrarySearchFilter, {
   LibraryFilterOption,
@@ -15,6 +15,7 @@ export function BookList({
   filterOption,
   onChangeFilterOption,
   children,
+  bookCount,
 }: {
   value: number
   max: number
@@ -23,6 +24,7 @@ export function BookList({
   filterOption: LibraryFilterOption[]
   onChangeFilterOption?: (filterOption: LibraryFilterOption[]) => void
   children?: ReactNode
+  bookCount?: number
 }) {
   const style = useStyle(STYLE_ID)
   return (
@@ -41,7 +43,7 @@ export function BookList({
         />
       </div>
       {alertMessage && <AlertBar>{alertMessage}</AlertBar>}
-      <div className={style.row_b}>{children}</div>
+      {bookCount == 0 ? <EmptyMessage>학습 도서가 발견되지 않았어요.<br />(필터 설정을 확인해 보세요)</EmptyMessage> : <div className={style.row_b}>{children}</div>}
     </div>
   )
 }

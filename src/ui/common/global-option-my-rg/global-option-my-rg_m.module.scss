@@ -836,7 +836,6 @@
   }
   .row_b {
     width: 100%;
-    height: calc(100vh - 113px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -871,8 +870,11 @@
   gap: var(--space-m);
   background-color: var(--light);
   padding: var(--space-m);
-  position: sticky;
-  bottom: env(safe-area-inset-bottom);
+  padding-bottom: calc(env(safe-area-inset-bottom) + var(--space-m));
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-top: 2px solid var(--gray2);
   @media (prefers-color-scheme: dark) {
     background-color: #0c0541;
@@ -957,6 +959,7 @@
 // 나의 학습 레벨 > 레벨 테스트 이력
 .level_test_history {
   padding: var(--space-s);
+  margin-bottom: calc(env(safe-area-inset-bottom) + 180px);
   display: flex;
   flex-direction: column;
   gap: var(--space-s);
@@ -977,10 +980,11 @@
   gap: var(--space-m);
   background-color: var(--light);
   padding: var(--space-m);
-  position: sticky;
+  padding-bottom: calc(env(safe-area-inset-bottom) + var(--space-m));
+  position: fixed;
   left: 0;
   right: 0;
-  bottom: env(safe-area-inset-bottom);
+  bottom: 0;
   border-top: 2px solid var(--gray2);
   @media (prefers-color-scheme: dark) {
     background-color: #0c0541;

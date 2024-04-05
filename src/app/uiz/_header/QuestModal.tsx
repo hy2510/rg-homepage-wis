@@ -39,26 +39,28 @@ export function QuestModal({
         _viewQuestModal && _viewQuestModal(false)
       }}>
       <div className={style.quest_modal}>
-        <Nav>
-          <NavItem
-            active={isDodoAndFriends}
-            onClick={() => {
-              _isDodoAndFriends(true)
-              _isLevelMaster(false)
-            }}
-            width="100%">
-            도도와 친구들
-          </NavItem>
-          <NavItem
-            active={isLevelMaster}
-            onClick={() => {
-              _isDodoAndFriends(false)
-              _isLevelMaster(true)
-            }}
-            width="100%">
-            레벨 마스터
-          </NavItem>
-        </Nav>
+        <div style={{position: 'sticky', top: 0, zIndex: 10}}>
+          <Nav>
+            <NavItem
+              active={isDodoAndFriends}
+              onClick={() => {
+                _isDodoAndFriends(true)
+                _isLevelMaster(false)
+              }}
+              width="100%">
+              도도와 친구들
+            </NavItem>
+            <NavItem
+              active={isLevelMaster}
+              onClick={() => {
+                _isDodoAndFriends(false)
+                _isLevelMaster(true)
+              }}
+              width="100%">
+              레벨 마스터
+            </NavItem>
+          </Nav>
+        </div>
         {isDodoAndFriends && <DodoAndFriends />}
         {isLevelMaster && <LevelMasterProgress />}
       </div>
@@ -114,7 +116,7 @@ const DodoAndFriends = () => {
         <div className={style.dodo_and_friends}>
           <div className={style.comment}>
             <AlertBar>
-              포인트를 모으고 친구들의 성장 스토리를 확인해 보세요!
+              학습 포인트를 모아서 친구들의 성장 스토리를 잠금 해제하세요! 
             </AlertBar>
           </div>
           {dodofriends.map((friend) => {
@@ -339,7 +341,7 @@ const LevelMasterProgress = () => {
         <div className={style.level_master_progress}>
           <div className={style.comment}>
             <AlertBar>
-              레벨별로 포인트롤 획득하여 레벨 마스터를 달성해 보세요.
+              레벨별 학습 포인트를 모아서 레벨 마스터를 달성해 보세요!
             </AlertBar>
           </div>
           <div className={style.level_master_lists}>

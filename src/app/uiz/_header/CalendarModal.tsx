@@ -147,24 +147,26 @@ const CalendarUI = ({ loading: propsLoading }: { loading: boolean }) => {
 
   return (
     <>
-      <Nav>
-        <NavItem
-          active={isSimpleMode}
-          onClick={() => {
-            _isSimpleMode(true)
-          }}
-          width="100%">
-          간편보기
-        </NavItem>
-        <NavItem
-          active={!isSimpleMode}
-          onClick={() => {
-            _isSimpleMode(false)
-          }}
-          width="100%">
-          상세보기
-        </NavItem>
-      </Nav>
+      <div style={{position: 'sticky', top: 0, zIndex: 10}}>
+        <Nav>
+          <NavItem
+            active={isSimpleMode}
+            onClick={() => {
+              _isSimpleMode(true)
+            }}
+            width="100%">
+            간편보기
+          </NavItem>
+          <NavItem
+            active={!isSimpleMode}
+            onClick={() => {
+              _isSimpleMode(false)
+            }}
+            width="100%">
+            상세보기
+          </NavItem>
+        </Nav>
+      </div>
       <div className={style.calendar_modal}>
         <div className={`${style.cal_header} ${monthNames[info.month - 1]}`}>
           <div className={style.cal_header_container}>
@@ -255,7 +257,7 @@ const CalendarSimpleModeInfo = ({ loading }: { loading: boolean }) => {
           width="18"
           height="18"
         />
-        <span>{`출석일수: ${attendDays}일`}</span>
+        <span>{`출석일수 ${attendDays}일`}</span>
       </div>
       <div className={style.achieve_goals}>
         <Image
@@ -264,7 +266,7 @@ const CalendarSimpleModeInfo = ({ loading }: { loading: boolean }) => {
           width="18"
           height="18"
         />
-        <span>{`일일목표 달성: ${studyDays}건`}</span>
+        <span>{`일일목표 달성 ${studyDays}건`}</span>
       </div>
     </div>
   )
@@ -378,7 +380,7 @@ const CalendarDetailModeInfo = ({ loading }: { loading: boolean }) => {
               width="18"
               height="18"
             />
-            <span>{`일일목표 달성: ${studyDays}건`}</span>
+            <span>{`일일목표 달성 ${studyDays}건`}</span>
           </div>
           <div className={style.daily_goal_info}>
             {/* <Image
@@ -400,7 +402,7 @@ const CalendarDetailModeInfo = ({ loading }: { loading: boolean }) => {
               width="18"
               height="18"
             />
-            <span>{`일일목표 달성: ${studyDays}건`}</span>
+            <span>{`일일목표 달성 ${studyDays}건`}</span>
           </div>
           <div className={style.daily_goal_info}>
             {/* <Image
@@ -722,7 +724,7 @@ const CalendarEvent = ({ month }: { month: string }) => {
               text = `누적독서 - ${item.value}권 돌파`
               break
             case 'levelup':
-              text = `Level Master 획득 - ${item.value}`
+              text = `레벨 마스터 달성 - ${item.value}`
               break
             case 'change':
               if (item.extra === 'book') {

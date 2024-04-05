@@ -43,7 +43,7 @@ const DodoABCMode = () => {
   const level = 'PK'
 
   const preKCategory: DropDownOption[] = [
-    { key: 'Study-Alphabet', label: 'Dodo ABC' },
+    { key: 'Study-Alphabet', label: 'DODO ABC' },
     { key: 'Game-Alphabet', label: 'Game' },
     { key: 'Song-Nursery-Rhyme', label: 'Song & Chant' },
   ]
@@ -240,6 +240,8 @@ function DodoABCStudy({
   let outroVideoSrc = ''
   let introBg = ''
   let outroBg = ''
+  let introPosterSrc = ''
+  let outroPosterSrc = ''
   if (activity === 'Study-Alphabet') {
     introVideoSrc =
       'https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/alphabet_intro.mp4'
@@ -247,6 +249,8 @@ function DodoABCStudy({
       'https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/alphabet_ending.mp4'
     introBg = 'alphabet'
     outroBg = 'alphabet'
+    introPosterSrc = '/src/images/@dodo-abc-video-thumbnail/doddo_abc_01_intro.png'
+    outroPosterSrc = '/src/images/@dodo-abc-video-thumbnail/doddo_abc_01_ending.png'
   } else if (activity === 'Study-Phonics-1') {
     introVideoSrc =
       'https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/phonics1_intro.mp4'
@@ -254,6 +258,8 @@ function DodoABCStudy({
       'https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/phonics1_ending.mp4'
     introBg = 'phonics1'
     outroBg = 'phonics1'
+    introPosterSrc = '/src/images/@dodo-abc-video-thumbnail/doddo_abc_02_intro.png'
+    outroPosterSrc = '/src/images/@dodo-abc-video-thumbnail/doddo_abc_02_ending.png'
   } else if (activity === 'Study-Phonics-2') {
     introVideoSrc =
       'https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/phonics2_intro.mp4'
@@ -261,6 +267,8 @@ function DodoABCStudy({
       'https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/phonics2_ending.mp4'
     introBg = 'phonics2'
     outroBg = 'phonics2'
+    introPosterSrc = '/src/images/@dodo-abc-video-thumbnail/doddo_abc_03_intro.png'
+    outroPosterSrc = '/src/images/@dodo-abc-video-thumbnail/doddo_abc_03_ending.png'
   } else if (activity === 'Study-Sight-Words-1') {
     introVideoSrc =
       'https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/sightwords_intro.mp4'
@@ -268,6 +276,8 @@ function DodoABCStudy({
       'https://wcfresource.a1edu.com/newsystem/moviebook/dodoabc/sightwords_ending.mp4'
     introBg = 'sightWords1'
     outroBg = 'sightWords1'
+    introPosterSrc = '/src/images/@dodo-abc-video-thumbnail/doddo_abc_04_intro.png'
+    outroPosterSrc = '/src/images/@dodo-abc-video-thumbnail/doddo_abc_04_ending.png'
   } else if (activity === 'Study-Sight-Words-2') {
     introVideoSrc = ''
     outroVideoSrc = ''
@@ -278,7 +288,7 @@ function DodoABCStudy({
   return (
     <>
       <AlertBar>
-        영어 기초 다지기를 위한 코스! 통통 튀는 부분부터 학습을 시작하세요!
+        DODO와 함께 영어의 기초를 즐겁게 배워보세요!
       </AlertBar>
       <CourseDodoABCList
         passedNum={passedContents}
@@ -286,7 +296,9 @@ function DodoABCStudy({
         introVideoSrc={introVideoSrc}
         outroVideoSrc={outroVideoSrc}
         introBg={introBg}
-        outroBg={outroBg}>
+        outroBg={outroBg}
+        introPosterSrc={introPosterSrc}
+        outroPosterSrc={outroPosterSrc}>
         {pkBooks.map((item, i) => {
           return (
             <CourseItem

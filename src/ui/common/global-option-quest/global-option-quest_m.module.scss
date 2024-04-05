@@ -1,22 +1,23 @@
 // 퀘스트 모달
 .quest_modal {
   .quest_modal_body {
-    padding: var(--space-xs) var(--space-s) var(--space-m);
+    padding: 0 var(--space-s);
+    margin-bottom: calc(env(safe-area-inset-bottom) + 120px);
     .comment {
-      margin: var(--space-m) 0;
+      margin-top: var(--space-m);
       color: var(--gray-dark);
       font-size: var(--text-l);
       font-weight: 500;
     }
   }
   .quest_modal_bottom {
-    position: sticky;
+    position: fixed;
     bottom: 0;
     z-index: 2;
     width: 100%;
     box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.1);
     padding: var(--space-s);
-    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: calc(env(safe-area-inset-bottom) + var(--space-s));
     display: grid;
     grid-template-columns: 80px 1fr;
     gap: var(--space-s);

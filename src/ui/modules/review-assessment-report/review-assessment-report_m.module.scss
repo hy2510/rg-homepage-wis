@@ -53,7 +53,7 @@
         background-size: 28px;
         background-position: center;
         position: fixed;
-        top: var(--space-s);
+        top: calc(env(safe-area-inset-top) + var(--space-s));
         right: var(--space-s);
         z-index: 1;
         @media (prefers-color-scheme: dark) {

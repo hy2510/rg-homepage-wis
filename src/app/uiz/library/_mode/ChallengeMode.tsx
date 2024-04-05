@@ -253,7 +253,7 @@ export default function ChallengeMode() {
         userPoint={readingkingInfo.totalPoint}
         onPrizeChange={onPrizeChange}
       />
-      <LatestTodoListView todos={todos} isLabelRgPoint={true} />
+      {todos.count != 0 && <LatestTodoListView todos={todos} isLabelRgPoint={true} />}
       {viewLevelSelector && (
         <LevelSelector
           _viewLevelSelector={_viewLevelSelector}
