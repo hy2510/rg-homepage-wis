@@ -56,11 +56,28 @@
 .game_list_item {
   cursor: pointer;
   border-radius: var(--round-m);
-  overflow: hidden;
   border: 1.2px solid rgba($color: #000000, $alpha: 0.15);
+  position: relative;
   &.incompleted {
     filter: grayscale(1);
     cursor: default;
+  }
+  .completed_label {
+    display: flex;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    .ico_star {
+      width: 30px;
+      height: 30px;
+      background-image: url("/src/images/@dodo-abc-game/icn_star.png");
+      background-size: 24px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  img {
+    border-radius: var(--round-m);
   }
 }
 

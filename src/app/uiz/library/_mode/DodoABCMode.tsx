@@ -358,6 +358,10 @@ function DodoABCGame({
                   onBookCoverClick && onBookCoverClick(item.levelRoundId)
                 }
               }}>
+              <div className={style.completed_label}>
+                <div className={style.ico_star}></div>
+                <div className={style.ico_star}></div>
+              </div>
               <Image
                 alt=""
                 src={item.surfaceImagePath}

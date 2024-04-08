@@ -119,6 +119,10 @@ const DodoAbcBookCover = ({
             onStartStudy(levelRoundId)
           }
         }}>
+        <div className={style.completed_label}>
+          <div className={style.ico_star}></div>
+          <div className={style.ico_star}></div>
+        </div>
         <img alt="" src={bookImgSrc} width={'100%'} />
       </div>
       {/* <div className={style.group2}>
