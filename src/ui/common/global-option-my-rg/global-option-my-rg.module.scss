@@ -186,6 +186,41 @@
   }
 }
 
+.chat_bot_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  @media (prefers-color-scheme: dark) {
+    background-color: #0c0541;
+  }
+  .chat_bot_header {
+    width: 100%;
+    padding: var(--space-m);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      font-size: 1.4em;
+      font-weight: 600;
+    }
+    .delete_button {
+      width: 30px;
+      height: 30px;
+      background-image: url("/src/images/delete-icons/x_black.svg");
+      background-position: center;
+      background-size: 24px;
+      background-repeat: no-repeat;
+      @media (prefers-color-scheme: dark) {
+        background-image: url("/src/images/delete-icons/x_white.svg");
+      }
+    }
+  }
+}
+
 // 나의 프로필
 .my_profile {
   padding: var(--space-m);

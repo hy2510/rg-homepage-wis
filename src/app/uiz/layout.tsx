@@ -25,10 +25,7 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
 
   return (
     <>
-      <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width, viewport-fit=cover" />
       <meta name='theme-color' content={themeColor} />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
       <Gheader />
       {children}
       <Gfooter />

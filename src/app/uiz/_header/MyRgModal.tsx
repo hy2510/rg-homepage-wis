@@ -597,6 +597,8 @@ const MyRgEtc = ({
 }) => {
   const style = useStyle(STYLE_ID)
 
+  const [viewChatBot, setViewChatBot] = useState(false);
+
   return (
     <div className={style.my_rg_etc}>
       <div className={style.etc_item}>
@@ -619,7 +621,7 @@ const MyRgEtc = ({
         />
         <div className={style.txt_l}>학습설정</div>
       </div>
-      <div className={style.etc_item}>
+      <div className={style.etc_item} onClick={()=>{setViewChatBot(true)}}>
         <Image
           alt=""
           src=" /src/images/@my-rg-modal/chatbot.svg"
@@ -628,6 +630,14 @@ const MyRgEtc = ({
         />
         <div className={style.txt_l}>1:1 챗봇상담</div>
       </div>
+      {viewChatBot && 
+        <div className={style.chat_bot_container}>
+          <div className={style.chat_bot_header} onClick={()=>{setViewChatBot(false)}}>
+            <div className={style.title}>챗봇 상담</div>
+            <button className={style.delete_button}></button>
+          </div>
+          <div className={style.chat_bot_body}>아이프레임</div>
+        </div>}
     </div>
   )
 }

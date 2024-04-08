@@ -119,6 +119,9 @@ main {
   width: calc(100% - 6px);
   // min-height: calc(100vh - var(--space-xxl) - var(--header-height));
   // margin-bottom: var(--space-xxl) !important;
+  @media (pointer: coarse) {
+    width: 100%
+  }
 }
 
 input {

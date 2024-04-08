@@ -7,6 +7,9 @@ const lang = 'ko'
 export const metadata = {
   title: 'Reading Gate',
   description: '온라인 영어독서관',
+  viewport: "initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width, viewport-fit=cover",
+  'apple-mobile-web-app-capable': 'yes',
+  'apple-mobile-web-app-status-bar-style': 'white-translucent',
 }
 
 export default function RootLayout({

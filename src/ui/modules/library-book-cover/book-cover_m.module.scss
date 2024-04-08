@@ -202,14 +202,14 @@
               min-width: 14px !important;
             }
           }
-          .download_voca {
+          .download_worksheet {
             &::after {
               content: "";
               width: 1px;
               height: 15px;
               background-color: rgba(255, 255, 255, 0.3);
               position: absolute;
-              right: 0;
+              left: 0;
               top: 3px;
               border-radius: var(--round-full);
             }

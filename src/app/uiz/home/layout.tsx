@@ -38,7 +38,7 @@ export default function Layout({ children }: { children?: ReactNode }) {
 
   const HomeNavBar = () => {
     return (
-      <div className={`${style.home_nav_bar} container`}>
+      <div className={`${style.home_nav_bar}`}>
         <HomeNavItem
           name={'메인'}
           href={SITE_PATH.HOME.MAIN}
